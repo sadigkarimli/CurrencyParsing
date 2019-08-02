@@ -1,0 +1,16 @@
+create table currency(
+    currency_id number constraint cur_id_pk primary key,
+    type varchar2(30) not null,
+    code varchar2(3) not null unique,
+    nominal varchar2(6) not null,
+    name varchar2(100) not null unique,
+    value number
+);
+
+create sequence currency_seq increment by 1 start with 1 minvalue 1;
+
+
+insert into currency(currency_id, type, code, nominal, name, value)
+values(1, 'xarici', 'BMT', '1', 'ASH', 12.32);
+
+
